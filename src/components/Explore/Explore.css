@@ -1,0 +1,23 @@
+.explore-nav {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    border-bottom: 4px solid black;
+}
+
+.explore-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.explore-btn-div:hover {
+    background-color: orange;
+}
+
+.explore-div {
+    height: 100vh;
+    background-color: purple;
+}

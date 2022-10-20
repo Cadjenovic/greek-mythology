@@ -1,0 +1,39 @@
+.hero-container {
+    background: url(../../../resources/images/hero-cover.png) no-repeat center
+        center fixed;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.explore-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    position: absolute;
+    top: 70%;
+    background-color: rgba(0, 0, 0, 0.7);
+    left: 25%;
+    right: 25%;
+    color: white;
+    padding: 20px;
+    border-radius: 3rem;
+}
+
+.explore-text {
+    font-size: 32px;
+}
+
+.explore-btn {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    border-radius: 3rem;
+    padding: 1rem 3rem;
+    font-size: 16px;
+}
