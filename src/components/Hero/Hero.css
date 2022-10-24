@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.explore-container {
+.hero-explore-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,11 +23,11 @@
     border-radius: 3rem;
 }
 
-.explore-text {
+.hero-explore-text {
     font-size: 32px;
 }
 
-.explore-btn {
+.hero-explore-btn {
     background-color: black;
     color: white;
     cursor: pointer;

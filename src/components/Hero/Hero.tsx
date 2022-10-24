@@ -6,11 +6,11 @@ const Hero = () => {
     // TODO Maybe dynamic text
     return (
         <div className="hero-container">
-            <div className="explore-container">
-                <p className="explore-text">
+            <div className="hero-explore-container">
+                <p className="hero-explore-text">
                     Heroes, Myths and Legends of Ancient Greece...
                 </p>
-                <button className="explore-btn">Explore</button>
+                <button className="hero-explore-btn">Explore</button>
             </div>
         </div>
     );

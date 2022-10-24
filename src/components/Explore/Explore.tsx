@@ -28,7 +28,7 @@ const Explore: FC<IProps> = ({ categories }) => {
         return (
             <div
                 key={i}
-                className="explore-btn-div"
+                className="explore-nav-btn"
                 style={{ width: widthForCat, textTransform: "capitalize" }}
                 onClick={onCategoryClick}
             >
@@ -39,9 +39,9 @@ const Explore: FC<IProps> = ({ categories }) => {
 
     // Return
     return (
-        <div>
+        <div className="explore-container">
             <nav className="explore-nav">{mappedCategories}</nav>
-            <div className="explore-div">
+            <div className="explore-content">
                 <Carousel data={categoryData} />
             </div>
         </div>

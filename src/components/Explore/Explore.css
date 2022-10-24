@@ -1,23 +1,24 @@
 .explore-nav {
-    background-color: green;
     display: flex;
     justify-content: space-evenly;
     height: 50px;
     border-bottom: 4px solid black;
 }
 
-.explore-btn-div {
+.explore-nav-btn {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.explore-btn-div:hover {
+.explore-nav-btn:hover {
     background-color: orange;
     cursor: pointer;
 }
 
-.explore-div {
-    height: 100vh;
-    background-color: purple;
+.explore-content {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    padding: 5% 10%;
 }

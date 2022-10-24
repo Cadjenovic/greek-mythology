@@ -12,14 +12,14 @@ export const data = [
         name: "hades",
         description:
             "A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. ",
-        image: "https://www.ancient-origins.net/sites/default/files/field/image/Unshakeable-Power-of-Zeus.jpg",
+        image: "https://i.ytimg.com/vi/BMeNMdLMVN0/maxresdefault.jpg",
         category: "gods",
     },
     {
         name: "poseidon",
         description:
             "A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. A bunch of fucking words. ",
-        image: "https://www.ancient-origins.net/sites/default/files/field/image/Unshakeable-Power-of-Zeus.jpg",
+        image: "https://miro.medium.com/max/1400/0*3IqOpZXcsC61Bi4u.jpg",
         category: "gods",
     },
     {

@@ -1,0 +1,12 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
