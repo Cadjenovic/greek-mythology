@@ -2,6 +2,8 @@ import React from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
+    // TODO make navbar follow only through hero section
+
     return (
         <nav className="navbar-container">
             <div className="navbar-logo">Greek Mythology</div>

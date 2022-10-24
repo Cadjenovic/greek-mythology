@@ -4,14 +4,17 @@ import Hero from "../Hero/Hero";
 import Explore from "../Explore/Explore";
 import "./App.css";
 
+// Simulating data from the API
+import { data, getAllCategories } from "../../data";
+
+const categories = getAllCategories();
+
 const App = () => {
     return (
         <>
             <Navbar />
             <Hero />
-            <Explore />
-            {/* <Hero />
-            <Hero /> */}
+            <Explore categories={categories} />
         </>
     );
 };

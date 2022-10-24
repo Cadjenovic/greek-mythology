@@ -3,6 +3,7 @@ import HeroCover from "../../../resources/images/hero-cover.png";
 import "./Hero.css";
 
 const Hero = () => {
+    // TODO Maybe dynamic text
     return (
         <div className="hero-container">
             <div className="explore-container">

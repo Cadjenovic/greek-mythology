@@ -1,7 +1,7 @@
 .explore-nav {
     background-color: green;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 50px;
     border-bottom: 4px solid black;
 }
@@ -10,11 +10,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
 }
 
 .explore-btn-div:hover {
     background-color: orange;
+    cursor: pointer;
 }
 
 .explore-div {
