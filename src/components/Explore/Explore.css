@@ -1,3 +1,7 @@
+.explore-container {
+    height: 100vh;
+}
+
 .explore-nav {
     display: flex;
     justify-content: space-evenly;
@@ -9,16 +13,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+}
+
+.explore-nav-btn.active {
+    background-color: orange;
+    font-size: 18px;
 }
 
 .explore-nav-btn:hover {
     background-color: orange;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .explore-content {
     display: flex;
     justify-content: center;
-    height: 90vh;
     padding: 5% 10%;
+    height: 90%;
 }

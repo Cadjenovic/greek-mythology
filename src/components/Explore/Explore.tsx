@@ -1,14 +1,19 @@
 import React, { FC, useState } from "react";
+import { useSelector } from "react-redux";
 import "./Explore.css";
 import { getDataByCategory } from "../../data";
 import Carousel from "../Carousel/Carousel";
+import { RootState } from "../../store";
 
 interface IProps {
     categories: string[];
 }
 
-const Explore: FC<IProps> = ({ categories }) => {
+const Explore = () => {
     // TODO Active category state, bound to change place
+    const categories = useSelector(
+        (state: RootState) => state.category.categories
+    );
     const [activeCategory, setActiveCategory] = useState<string>(categories[0]);
     const [categoryData, setCategoryData] = useState(getDataByCategory("gods"));
 
@@ -28,7 +33,11 @@ const Explore: FC<IProps> = ({ categories }) => {
         return (
             <div
                 key={i}
-                className="explore-nav-btn"
+                className={
+                    category === activeCategory
+                        ? "explore-nav-btn active"
+                        : "explore-nav-btn"
+                }
                 style={{ width: widthForCat, textTransform: "capitalize" }}
                 onClick={onCategoryClick}
             >

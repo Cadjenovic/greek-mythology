@@ -12,8 +12,6 @@ const DotContainer: FC<IProps> = ({ length, activeDot }) => {
         <Dot key={i} active={i === activeDot}></Dot>
     ));
 
-    console.log(dotArray);
-
     return <div className="dot-container">{dotArray}</div>;
 };
 

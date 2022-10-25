@@ -1,14 +1,16 @@
 import React from "react";
+import NavbarLink from "../NavbarLink/NavbarLink";
 import "./Navbar.css";
 
 const Navbar = () => {
-    // TODO make navbar follow only through hero section
-
     return (
         <nav className="navbar-container">
             <div className="navbar-logo">Greek Mythology</div>
             <div className="navbar-menu">
                 <ul className="navbar-list">
+                    <li>
+                        <NavbarLink />
+                    </li>
                     <li>
                         <a href="#">Explore</a>
                     </li>

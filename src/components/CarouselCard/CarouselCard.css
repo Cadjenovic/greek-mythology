@@ -1,18 +1,17 @@
 .carousel-card {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
     align-items: center;
-    height: 90%;
-    padding: 5%;
+    /* justify-content: center; */
+    height: 80%;
 }
 
 .carousel-card-text {
-    height: 40%;
 }
 
 .carousel-card-img-container {
-    height: 60%;
+    height: 75%;
 }
 
 .carousel-card-img {

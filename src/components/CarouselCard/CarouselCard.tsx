@@ -11,7 +11,7 @@ const CarouselCard: FC<IProps> = ({ name, description, image }) => {
     return (
         <div className="carousel-card">
             <div className="carousel-card-img-container">
-                <img className="carousel-card-img" src={image} />
+                <img className="carousel-card-img" src={image} alt={name} />
             </div>
             <div className="carousel-card-text">
                 {name}
