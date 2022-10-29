@@ -1,0 +1,35 @@
+.b {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.navbar-link-menu-container {
+    position: relative;
+}
+
+.navbar-link-menu {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+.navbar-link-menu.active {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.navbar-link-menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+.navbar-link-menu a:hover {
+    background-color: orange;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}

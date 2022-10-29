@@ -1,15 +1,17 @@
 import React, { useRef } from "react";
-import Navbar from "../Navbar/Navbar";
 import Hero from "../Hero/Hero";
 import Explore from "../Explore/Explore";
+import Gallery from "../Gallery/Gallery";
 import "./App.css";
 
 const App = () => {
+    const ref = useRef(null);
+
     return (
         <>
-            <Navbar />
             <Hero />
             <Explore />
+            <Gallery />
         </>
     );
 };

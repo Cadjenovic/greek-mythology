@@ -1,11 +1,11 @@
-import React from "react";
-import HeroCover from "../../../resources/images/hero-cover.png";
+import React, { useRef } from "react";
+import Navbar from "../Navbar/Navbar";
 import "./Hero.css";
 
 const Hero = () => {
-    // TODO Maybe dynamic text
     return (
         <div className="hero-container">
+            <Navbar />
             <div className="hero-explore-container">
                 <p className="hero-explore-text">
                     Heroes, Myths and Legends of Ancient Greece...

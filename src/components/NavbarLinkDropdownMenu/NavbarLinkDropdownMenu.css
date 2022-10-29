@@ -1,9 +1,0 @@
-.navbar-link-dropdown-menu-container {
-    position: absolute;
-    display: none;
-}
-
-.navbar-link-dropdown-menu-container.active {
-    background-color: white;
-    display: block;
-}

@@ -1,16 +1,11 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./Explore.css";
 import { getDataByCategory } from "../../data";
 import Carousel from "../Carousel/Carousel";
 import { RootState } from "../../store";
 
-interface IProps {
-    categories: string[];
-}
-
 const Explore = () => {
-    // TODO Active category state, bound to change place
     const categories = useSelector(
         (state: RootState) => state.category.categories
     );
@@ -19,14 +14,13 @@ const Explore = () => {
 
     // Category state change
     const onCategoryClick = (e: React.MouseEvent) => {
-        setActiveCategory(e.currentTarget.textContent || "gods");
-        setCategoryData(
-            getDataByCategory(e.currentTarget.textContent || "gods")
-        );
+        const category = e.currentTarget.textContent;
+        setActiveCategory(category || "gods");
+        setCategoryData(getDataByCategory(category || "gods"));
     };
 
-    // TODO Width calculation
-    const widthForCat = window.innerWidth / categories.length;
+    // Width calculation
+    const widthForCat = window.outerWidth / categories.length;
 
     // TODO Mapping categories
     const mappedCategories = categories.map((category, i) => {
@@ -46,7 +40,6 @@ const Explore = () => {
         );
     });
 
-    // Return
     return (
         <div className="explore-container">
             <nav className="explore-nav">{mappedCategories}</nav>

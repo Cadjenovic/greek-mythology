@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import CarouselCard from "../CarouselCard/CarouselCard";
 import DotContainer from "../DotContainer/DotContainer";
 import "./Carousel.css";
@@ -10,6 +10,10 @@ interface IProps {
 const Carousel: FC<IProps> = ({ data }) => {
     const [active, setActive] = useState(0);
 
+    useEffect(() => {
+        setActive(0);
+    }, [data]);
+
     const onPreviousClick = () => {
         if (active <= 0) return;
         setActive((prev) => prev - 1);
@@ -20,7 +24,7 @@ const Carousel: FC<IProps> = ({ data }) => {
         setActive((prev) => prev + 1);
     };
 
-    return data.length === 0 ? (
+    return data.length === 0 || active > data.length ? (
         <div className="no-data">No data</div>
     ) : (
         <div className="carousel">
