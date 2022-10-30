@@ -5,7 +5,6 @@ import "./Hero.css";
 const Hero = () => {
     return (
         <div className="hero-container">
-            <Navbar />
             <div className="hero-explore-container">
                 <p className="hero-explore-text">
                     Heroes, Myths and Legends of Ancient Greece...
