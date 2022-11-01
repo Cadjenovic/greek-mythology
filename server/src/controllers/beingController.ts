@@ -10,6 +10,10 @@ exports.getAll = async (req: Request, res: Response, next: NextFunction) => {
 
     const beings = await Being.find(queryObj).limit(limit);
 
+    if (!beings) {
+        new AppError("Could not find anything!", 404);
+    }
+
     res.status(200).json({
         status: "success",
         size: beings.length,
