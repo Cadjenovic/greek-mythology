@@ -1,6 +1,6 @@
 import express from "express";
 const cors = require("cors");
-const godRouter = require("./routes/godRouter");
+const beingRouter = require("./routes/beingRouter");
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Routers
-app.use("/gods", godRouter);
+app.use("/", beingRouter);
 
 // Global catch
 

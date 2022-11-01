@@ -1,15 +1,14 @@
-const God = require("../models/godModel");
+const Being = require("../models/beingModel");
 import { Request, Response, NextFunction } from "express";
 
 exports.getAll = async (req: Request, res: Response, next: NextFunction) => {
     const queryObj = { ...req.query };
-    const gods = await God.find(queryObj);
-    console.log("cao");
-    console.log(gods);
+    const beings = await Being.find(queryObj);
+
     res.status(200).json({
         status: "success",
         data: {
-            gods,
+            beings,
         },
     });
 };
