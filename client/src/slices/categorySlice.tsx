@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { getAllCategories } from "../data";
 
 export interface CategoryState {
     categories: string[];
 }
 
 const initialState: CategoryState = {
-    categories: getAllCategories(),
+    categories: ["god", "demigod", "creature", "mortal"],
 };
 
 export const categorySlice = createSlice({

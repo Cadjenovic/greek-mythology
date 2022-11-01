@@ -3,19 +3,19 @@ import "./CarouselCard.css";
 
 interface IProps {
     name: string;
-    description: string;
-    image: string;
+    desc: string;
+    img: string;
 }
 
-const CarouselCard: FC<IProps> = ({ name, description, image }) => {
+const CarouselCard: FC<IProps> = ({ name, desc, img }) => {
     return (
         <div className="carousel-card">
             <div className="carousel-card-img-container">
-                <img className="carousel-card-img" src={image} alt={name} />
+                <img className="carousel-card-img" src={img} alt={name} />
             </div>
             <div className="carousel-card-text">
                 {name}
-                {description}
+                {desc}
             </div>
         </div>
     );

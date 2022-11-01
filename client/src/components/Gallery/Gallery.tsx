@@ -1,33 +1,34 @@
-import React, { useState } from "react";
-import { getAllImages, getImagesByName } from "../../data";
+import React, { useEffect, useState } from "react";
 import "./Gallery.css";
+import mythology from "../../api/mythology";
 
 const Gallery = () => {
-    const [images, setImages] = useState<(string | undefined)[]>(
-        getAllImages()
-    );
+    const [beings, setBeings] = useState([]);
     const [inputText, setInputText] = useState("");
 
-    const onResetClick = () => {
-        setImages(getAllImages());
-        setInputText("");
-    };
+    useEffect(() => {
+        const defaultData = async () => {
+            const data = await mythology.getAllBeings();
+            setBeings(data.data.data.beings);
+        };
+        defaultData();
+    }, []);
 
-    const onSearchClick = () => {
-        setImages(getImagesByName(inputText));
+    const onResetClick = () => {
+        setInputText("");
     };
 
     const onInputTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputText(e.currentTarget.value);
     };
 
-    const mappedImages = images.map((img, i) => {
-        return (
-            <div key={i} className="gallery-image-card">
-                <img className="gallery-image" src={img} alt="no" />
-            </div>
-        );
-    });
+    const images = beings ? (
+        beings.map((being: any, i: number) => (
+            <img key={i} src={being.img} alt={being.desc} />
+        ))
+    ) : (
+        <div>Loading</div>
+    );
 
     return (
         <div className="gallery-container">
@@ -38,10 +39,9 @@ const Gallery = () => {
                     value={inputText}
                     onChange={(e) => onInputTextChange(e)}
                 />
-                <button onClick={onSearchClick}>Search</button>
                 <button onClick={onResetClick}>Reset</button>
             </div>
-            <div className="gallery-grid">{mappedImages}</div>
+            <div>{images}</div>
         </div>
     );
 };

@@ -4,30 +4,37 @@ const mythology = axios.create({
     baseURL: "http://localhost:5000",
 });
 
-const getAllBeings = async () => {
-    return await mythology.get("/");
+const getAllBeings = async (limit: number = 5) => {
+    return await mythology.get("/", {
+        params: {
+            limit,
+        },
+    });
 };
 
-const getAllByCategory = async (category: string) => {
+const getAllByCategory = async (category: string, limit: number = 5) => {
     return await mythology.get("/", {
         params: {
             category,
+            limit,
         },
     });
 };
 
-const getAllOlympians = async () => {
+const getAllOlympians = async (limit: number = 5) => {
     return await mythology.get("/", {
         params: {
             olympian: true,
+            limit,
         },
     });
 };
 
-const getAllByGender = async (gender: string) => {
+const getAllByGender = async (gender: string, limit: number = 5) => {
     return await mythology.get("/", {
         params: {
             gender,
+            limit,
         },
     });
 };
@@ -45,4 +52,5 @@ export default {
     getAllByCategory,
     getAllOlympians,
     getAllByGender,
+    getByName,
 };
