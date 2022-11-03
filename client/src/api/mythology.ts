@@ -1,50 +1,76 @@
 import axios from "axios";
 
+interface IData {
+    status: string;
+    size: number;
+    beings: IBeing[];
+}
+
+interface IBeing {
+    __id: string;
+    name: string;
+    desc: string;
+    img: string;
+    olympian: boolean;
+    gender: string;
+    category: string;
+}
+
 const mythology = axios.create({
     baseURL: "http://localhost:5000",
 });
 
 const getAllBeings = async (limit: number = 5) => {
-    return await mythology.get("/", {
+    const { data }: { data: IData } = await mythology.get<IData>("/", {
         params: {
             limit,
         },
     });
+
+    return data;
 };
 
 const getAllByCategory = async (category: string, limit: number = 5) => {
-    return await mythology.get("/", {
+    const { data }: { data: IData } = await mythology.get("/", {
         params: {
             category,
             limit,
         },
     });
+
+    return data;
 };
 
 const getAllOlympians = async (limit: number = 5) => {
-    return await mythology.get("/", {
+    const { data }: { data: IData } = await mythology.get("/", {
         params: {
             olympian: true,
             limit,
         },
     });
+
+    return data;
 };
 
 const getAllByGender = async (gender: string, limit: number = 5) => {
-    return await mythology.get("/", {
+    const { data }: { data: IData } = await mythology.get("/", {
         params: {
             gender,
             limit,
         },
     });
+
+    return data;
 };
 
 const getByName = async (name: string) => {
-    return await mythology.get("/", {
+    const { data }: { data: IData } = await mythology.get("/name", {
         params: {
             name,
         },
     });
+
+    return data;
 };
 
 export default {

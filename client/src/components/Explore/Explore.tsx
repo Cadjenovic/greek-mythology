@@ -4,19 +4,20 @@ import { useSelector } from "react-redux";
 import Carousel from "../Carousel/Carousel";
 import mythology from "../../api/mythology";
 import "./Explore.css";
+import IBeing from "../../interfaces/IBeing";
 
 const Explore = () => {
     const categories = useSelector(
-        (state: RootState) => state.category.categories
+        (state: RootState) => state.beings.categories
     );
     const [activeCategory, setActiveCategory] = useState<string>(categories[0]);
-    const [categoryData, setCategoryData] = useState(null);
+    const [categoryData, setCategoryData] = useState<IBeing[]>([]);
 
     // Initial (default) category - god
     useEffect(() => {
         const defaultData = async () => {
             const data = await mythology.getAllByCategory("god");
-            setCategoryData(data.data.data.beings);
+            setCategoryData(data.beings);
         };
 
         defaultData();
@@ -27,7 +28,7 @@ const Explore = () => {
         const category = e.currentTarget.textContent;
         setActiveCategory(category || "god");
         const data = await mythology.getAllByCategory(category || "god");
-        setCategoryData(data.data.data.beings);
+        setCategoryData(data.beings);
     };
 
     // Width calculation
@@ -52,10 +53,7 @@ const Explore = () => {
     });
 
     return (
-        <div
-            className="explore-container"
-            onClick={() => console.log(categoryData)}
-        >
+        <div className="explore-container">
             <nav className="explore-nav">{mappedCategories}</nav>
             <div className="explore-content">
                 {categoryData ? (

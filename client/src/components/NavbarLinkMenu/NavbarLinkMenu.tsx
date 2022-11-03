@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import { Link } from "react-router-dom";
 import "./NavbarLinkMenu.css";
 
 interface IProps {
@@ -27,7 +28,9 @@ const NavbarLinkMenu: FC<IProps> = ({ data }) => {
             <a href="#">Link</a> {/* TODO Make this NavbarLink component*/}
             <div className={classList}>
                 {data.map((cat, i) => (
-                    <a key={i}>{cat}</a>
+                    <Link key={i} to="/explore">
+                        {cat}
+                    </Link>
                 ))}
             </div>
         </div>

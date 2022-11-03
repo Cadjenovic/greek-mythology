@@ -9,8 +9,8 @@ const initialState: CategoryState = {
     categories: ["god", "demigod", "creature", "mortal"],
 };
 
-export const categorySlice = createSlice({
-    name: "category",
+export const beingSlice = createSlice({
+    name: "being",
     initialState,
     reducers: {
         setCategories: (state, action: PayloadAction<string[]>) => {
@@ -19,6 +19,6 @@ export const categorySlice = createSlice({
     },
 });
 
-export const {} = categorySlice.actions;
+export const {} = beingSlice.actions;
 
-export default categorySlice.reducer;
+export default beingSlice.reducer;

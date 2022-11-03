@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import "./main.css";
-import Explore from "./components/Explore/Explore";
+import Explore from "./pages/Explore";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
@@ -13,6 +13,7 @@ root.render(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/explore" element={<Explore />} />
             </Routes>
         </BrowserRouter>
     </Provider>
