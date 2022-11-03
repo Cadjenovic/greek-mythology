@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import "./Explore.css";
-import Carousel from "../Carousel/Carousel";
 import { RootState } from "../../store";
+import { useSelector } from "react-redux";
+import Carousel from "../Carousel/Carousel";
 import mythology from "../../api/mythology";
+import "./Explore.css";
 
 const Explore = () => {
     const categories = useSelector(

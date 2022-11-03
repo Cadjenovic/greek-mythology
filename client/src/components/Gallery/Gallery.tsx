@@ -24,7 +24,12 @@ const Gallery = () => {
 
     const images = beings ? (
         beings.map((being: any, i: number) => (
-            <img key={i} src={being.img} alt={being.desc} />
+            <img
+                className="gallery-image"
+                key={i}
+                src={being.img}
+                alt={being.desc}
+            />
         ))
     ) : (
         <div>Loading</div>
@@ -41,7 +46,7 @@ const Gallery = () => {
                 />
                 <button onClick={onResetClick}>Reset</button>
             </div>
-            <div>{images}</div>
+            <div className="gallery-grid">{images}</div>
         </div>
     );
 };

@@ -4,8 +4,6 @@ import { RootState } from "../../store";
 import NavbarLinkMenu from "../NavbarLinkMenu/NavbarLinkMenu";
 import "./Navbar.css";
 
-// TODO Add NavbarLink Component for regular non-menu links
-
 const Navbar = () => {
     const categories = useSelector(
         (state: RootState) => state.category.categories
