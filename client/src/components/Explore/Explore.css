@@ -1,35 +1,4 @@
 .explore-container {
-    height: 100vh;
-}
-
-.explore-nav {
+    flex-grow: 1;
     display: flex;
-    justify-content: space-evenly;
-    height: 50px;
-    border-bottom: 4px solid black;
-}
-
-.explore-nav-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-.explore-nav-btn.active {
-    background-color: orange;
-    font-size: 18px;
-}
-
-.explore-nav-btn:hover {
-    background-color: orange;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.explore-content {
-    display: flex;
-    justify-content: center;
-    padding: 5% 10%;
-    height: 90%;
 }

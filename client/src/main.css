@@ -1,5 +1,30 @@
+:root {
+    --background-color: rgba(0, 0, 0, 0.9);
+    --border-color: rgba(255, 165, 0, 0.1);
+    --primary-color: #ffa60099;
+    --text-color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    height: 100vh;
+    color: var(--text-color);
+}
+
+body > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
 }

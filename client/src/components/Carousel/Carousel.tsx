@@ -1,4 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 import CarouselCard from "../CarouselCard/CarouselCard";
 import DotContainer from "../DotContainer/DotContainer";
 import "./Carousel.css";
@@ -7,33 +9,24 @@ interface IProps {
     data: any;
 }
 
-const Carousel: FC<IProps> = ({ data }) => {
-    const [active, setActive] = useState(0);
+const Carousel = () => {
+    const beings = useSelector((state: RootState) => state.beings.beings);
 
-    useEffect(() => {
-        setActive(0);
-    }, [data]);
+    console.log("RENDERED");
+    console.log(beings);
 
-    const onPreviousClick = () => {
-        if (active <= 0) return;
-        setActive((prev) => prev - 1);
-    };
-
-    const onNextClick = () => {
-        if (active >= data.length - 1) return;
-        setActive((prev) => prev + 1);
-    };
-
-    return data.length === 0 || active > data.length ? (
-        <div className="no-data">No data</div>
-    ) : (
-        <div className="carousel">
-            <CarouselCard {...data[active]} />
-            <div className="carousel-nav">
-                <button onClick={onPreviousClick}>Left</button>
-                <DotContainer length={data.length} activeDot={active} />
-                <button onClick={onNextClick}>Right</button>
-            </div>
+    return (
+        <div className="carousel-container" onClick={() => console.log(beings)}>
+            {beings.length > 0 ? (
+                <CarouselCard
+                    name={beings[0].name}
+                    image={beings[0].img}
+                    desc={beings[0].desc}
+                />
+            ) : (
+                <div>No data</div>
+            )}
+            <div className="carousel-menu">Bottom Menu</div>
         </div>
     );
 };

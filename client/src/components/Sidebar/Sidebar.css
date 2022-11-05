@@ -1,0 +1,26 @@
+.sidebar-container {
+    border-right: 1px solid var(--border-color);
+    flex-basis: 20%;
+    min-width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.sidebar-btn:hover {
+    background: rgb(255, 166, 0);
+    background: linear-gradient(
+        360deg,
+        rgba(255, 166, 0, 0.6699054621848739) 10%,
+        rgba(182, 134, 43, 1) 24%,
+        rgba(0, 0, 0, 0.5438550420168067) 150%
+    );
+}

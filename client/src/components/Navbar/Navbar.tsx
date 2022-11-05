@@ -1,38 +1,33 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { RootState } from "../../store";
-import NavbarLinkMenu from "../NavbarLinkMenu/NavbarLinkMenu";
+import React, { useState } from "react";
+import Gods from "../../../resources/images/zeus.svg";
+import Demigods from "../../../resources/images/mythology.svg";
+import Titans from "../../../resources/images/atlas.svg";
+import Creatures from "../../../resources/images/medusa.svg";
+import Mortals from "../../../resources/images/heart.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
-    const categories = useSelector(
-        (state: RootState) => state.beings.categories
-    );
-
     return (
         <nav className="navbar-container">
-            <Link to="/" className="navbar-logo">
-                Greek Mythology
-            </Link>
-            <div className="navbar-menu">
-                <ul className="navbar-list">
-                    <li>
-                        <NavbarLinkMenu data={categories} />
-                    </li>
-                    <li>
-                        <a href="#">Explore</a>
-                    </li>
-                    <li>
-                        <a href="#">Gallery</a>
-                    </li>
-                    <li>
-                        <a href="#">Myths</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                </ul>
+            <div className="navbar-logo">
+                <a href="#">Greek</a>
+            </div>
+            <div className="navbar-links">
+                <a href="#" className="navbar-link">
+                    <img src={Gods} className="navbar-icon" />
+                </a>
+                <a href="#" className="navbar-link">
+                    <img src={Demigods} alt="Gods" className="navbar-icon" />
+                </a>
+                <a href="#" className="navbar-link">
+                    <img src={Titans} alt="Gods" className="navbar-icon" />
+                </a>
+                <a href="#" className="navbar-link">
+                    <img src={Creatures} alt="Gods" className="navbar-icon" />
+                </a>
+                <a href="#" className="navbar-link">
+                    <img src={Mortals} alt="Gods" className="navbar-icon" />
+                </a>
             </div>
         </nav>
     );
