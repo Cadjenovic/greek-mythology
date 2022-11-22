@@ -1,5 +1,4 @@
 import express from "express";
-import { resolve } from "path";
 const AppError = require("./utils/appError");
 const cors = require("cors");
 const beingRouter = require("./routes/beingRouter");
