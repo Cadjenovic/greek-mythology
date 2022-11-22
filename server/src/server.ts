@@ -24,3 +24,5 @@ mongoose
 app.listen(port, () => {
     console.log("Server started");
 });
+
+module.exports = app;
