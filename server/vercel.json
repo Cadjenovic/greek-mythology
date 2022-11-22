@@ -1,6 +1,6 @@
 {
     "version": 2,
     "name": "greek-mythology-api",
-    "builds": [{ "src": "build/app.js", "use": "@vercel/node" }],
-    "routes": [{ "src": "/(.*)", "dest": "build/app.js" }]
+    "builds": [{ "src": "server.ts", "use": "ts-node" }],
+    "routes": [{ "src": "/(.*)", "dest": "dist/app.js" }]
 }
