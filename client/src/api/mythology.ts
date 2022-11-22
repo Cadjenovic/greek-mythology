@@ -20,7 +20,7 @@ interface IBeing {
 }
 
 const mythology = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://greek-mythology-vtz0.onrender.com",
 });
 
 const getAllBeings = async (limit: number = 5) => {
