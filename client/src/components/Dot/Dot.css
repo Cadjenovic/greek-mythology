@@ -1,0 +1,33 @@
+.dot {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--border-color);
+    cursor: pointer;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+.active {
+    font-size: 72px;
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--border-color),
+        var(--secondary-color),
+        var(--primary-color),
+        var(--secondary-color),
+        var(--border-color)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}

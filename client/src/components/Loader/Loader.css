@@ -1,0 +1,10 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > i {
+    font-size: 100px;
+    color: var(--primary-color);
+}

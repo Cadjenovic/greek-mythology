@@ -1,29 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import IBeing from "../interfaces/IBeing";
 
-export interface CategoryState {
-    categories: string[];
-    beings: any[];
+export interface BeingState {
+    beings: IBeing[];
+    selectedBeing: IBeing | null;
+    loading: boolean;
 }
 
-const initialState: CategoryState = {
-    categories: ["god", "demigod", "creature", "mortal"],
+const initialState: BeingState = {
     beings: [],
+    selectedBeing: null,
+    loading: false,
 };
 
 export const beingSlice = createSlice({
     name: "being",
     initialState,
     reducers: {
-        setBeings: (state, action: PayloadAction<any[]>) => {
+        setBeings: (state, action: PayloadAction<IBeing[]>) => {
             state.beings = action.payload;
         },
-        setCategories: (state, action: PayloadAction<string[]>) => {
-            state.categories = action.payload;
+        setSelectedBeing: (state, action: PayloadAction<IBeing>) => {
+            state.selectedBeing = action.payload;
+        },
+        setLoading: (state, action: PayloadAction<boolean>) => {
+            state.loading = action.payload;
         },
     },
 });
 
-export const { setCategories, setBeings } = beingSlice.actions;
+export const { setBeings, setSelectedBeing, setLoading } = beingSlice.actions;
 
 export default beingSlice.reducer;

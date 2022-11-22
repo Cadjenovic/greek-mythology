@@ -1,0 +1,15 @@
+.family-slide {
+    padding: 2rem;
+    flex-grow: 1;
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    overflow: scroll;
+    position: relative;
+}
+
+/* .popup {
+    position: absolute;
+    display: block;
+    border: 1px solid var(--primary-color);
+} */

@@ -1,36 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import mythology from "../../api/mythology";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { setSelectedBeing } from "../../slices/beingSlice";
 import "./Sidebar.css";
+import IBeing from "../../interfaces/IBeing";
 
 const Sidebar = () => {
     const beings = useSelector((state: RootState) => state.beings.beings);
+    const selectedCategory = useSelector(
+        (state: RootState) => state.categories.selectedCategory
+    );
+    const selectedBeing = useSelector(
+        (state: RootState) => state.beings.selectedBeing
+    );
+    const dispatch = useDispatch();
 
-    // const [beings, setBeings] = useState<any>(null);
-
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         const data = await mythology.getAllBeings(100);
-    //         setBeings(data.beings);
-    //     };
-
-    //     getData();
-    // }, []);
+    const beingsFromCategory = beings.filter(
+        (being: IBeing) => being.category === selectedCategory
+    );
 
     const mappedBeings = beings ? (
-        beings.map((being: any) => {
+        beingsFromCategory.map((being: IBeing, i: number) => {
             return (
-                <button key={being.name} className="sidebar-btn">
+                <button
+                    key={being.name}
+                    className={
+                        selectedBeing?.name === being.name
+                            ? "sidebar-btn selected"
+                            : "sidebar-btn"
+                    }
+                    onClick={() =>
+                        dispatch(setSelectedBeing(beingsFromCategory[i]))
+                    }
+                >
                     {being.name}
                 </button>
             );
         })
     ) : (
-        <div> No data </div>
+        <div className="loader"> No data </div>
     );
 
-    return <div className="sidebar-container">{mappedBeings}</div>;
+    return <aside className="sidebar-container">{mappedBeings}</aside>;
 };
 
 export default Sidebar;

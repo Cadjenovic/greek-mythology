@@ -1,12 +1,15 @@
 .navbar-container {
+    flex-basis: 10%;
+    max-height: 10%;
     display: flex;
+    justify-content: center;
+    /* align-items: center; */
     width: 100%;
     border-bottom: 1px solid var(--border-color);
     font-size: 2rem;
 }
 
 .navbar-container > div {
-    padding: 2rem 1rem;
     display: flex;
 }
 
@@ -14,6 +17,15 @@
     min-width: 20%;
     flex-basis: 20%;
     border-right: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.navbar-logo > a {
+    text-align: center;
+    font-style: italic;
+    font-size: larger;
+    font-weight: bolder;
+    color: var(--primary-color);
 }
 
 .navbar-logo,
@@ -24,20 +36,5 @@
 
 .navbar-links {
     flex-grow: 1;
-}
-
-.navbar-link {
-    flex-basis: 15%;
-    text-align: center;
-}
-
-/* On hover flip vertical and display category name */
-.navbar-link:hover {
-    transform: scale(-1);
-}
-
-.navbar-icon {
-    filter: invert(1);
-    width: 2rem;
-    height: 2rem;
+    max-height: 100%;
 }

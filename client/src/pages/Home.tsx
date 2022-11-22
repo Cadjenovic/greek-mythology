@@ -1,31 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Explore from "../components/Explore/Explore";
-import Gallery from "../components/Gallery/Gallery";
-import mythology from "../api/mythology";
-import { useDispatch } from "react-redux";
-import { setBeings } from "../slices/beingSlice";
 
-const App = () => {
-    const dispatch = useDispatch();
+const Home = () => {
+    const [showHero, setShowHero] = useState(true);
 
-    useEffect(() => {
-        const getData = async () => {
-            const data = await mythology.getAllBeings(100);
-            console.log(data);
-
-            dispatch(setBeings(data.beings));
-        };
-
-        getData();
-    }, []);
+    const changeShowHero = (showHero: boolean) => {
+        setShowHero(showHero);
+    };
 
     return (
         <>
-            <Navbar />
-            <Explore />
+            <Navbar changeShowHero={changeShowHero} />
+            <Explore showHero={showHero} />
         </>
     );
 };
 
-export default App;
+export default Home;

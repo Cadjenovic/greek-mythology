@@ -3,13 +3,21 @@ import Dot from "../Dot/Dot";
 import "./DotContainer.css";
 
 interface IProps {
-    length: number;
     activeDot: number;
+    onDotClick: (index: number) => void;
 }
 
-const DotContainer: FC<IProps> = ({ length, activeDot }) => {
-    const dotArray = [...Array(length)].map((item, i) => (
-        <Dot key={i} active={i === activeDot}></Dot>
+const titles = ["General", "Lore", "Family"];
+
+const DotContainer: FC<IProps> = ({ activeDot, onDotClick }) => {
+    const dotArray = titles.map((item, i) => (
+        <Dot
+            key={i}
+            onDotClick={() => onDotClick(i)}
+            active={i === activeDot}
+            title={item}
+            index={i}
+        ></Dot>
     ));
 
     return <div className="dot-container">{dotArray}</div>;

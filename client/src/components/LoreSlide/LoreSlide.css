@@ -1,0 +1,26 @@
+.lore-slide {
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lore-slide-content {
+    gap: 2rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.lore-slide-content > h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.lore-slide-content > p {
+    text-align: center;
+    font-size: 24px;
+}

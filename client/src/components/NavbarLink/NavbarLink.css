@@ -1,0 +1,85 @@
+.navbar-link {
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    position: relative;
+}
+
+/* On hover flip vertical and display category name */
+
+@keyframes rotateHover {
+    from {
+        transform: scale(1) translate(-0px, 0) skew(0deg);
+    }
+    to {
+        transform: scale(1) translate(0px, 10px) skew(0deg) rotate(-180deg);
+    }
+}
+
+@keyframes rotateLeave {
+    from {
+        transform: scale(1) translate(0px, 10px) skew(0deg) rotate(-180deg);
+    }
+    to {
+        transform: scale(1) translate(-0px, 0) skew(0deg);
+    }
+}
+
+@keyframes fadein {
+    0% {
+        color: white;
+        font-size: 0px;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        font-size: 22px;
+        color: var(--primary-color);
+        opacity: 1;
+    }
+}
+
+.navbar-link.selected-category {
+    transform: scale(1) translate(0px, 10px) skew(0deg) rotate(-180deg);
+}
+
+.navbar-link.selected-category > div {
+    font-size: 22px;
+    color: var(--primary-color);
+    opacity: 1;
+    position: absolute;
+    top: 65px;
+    display: block;
+    transform: scale(-1);
+}
+
+.navbar-link:hover:not(.selected-category) {
+    animation: rotateHover 0.8s ease 0.2s normal forwards;
+}
+
+.navbar-link:hover:not(.selected-category) > div {
+    position: absolute;
+    top: 65px;
+    display: block;
+    font-size: 18px;
+    transform: scale(-1);
+    animation: fadein 1s ease 0s normal forwards;
+}
+
+.navbar-icon-title {
+    display: none;
+    font-size: 18px;
+    transform: scale(-1);
+    text-transform: capitalize;
+}
+
+.navbar-icon {
+    filter: invert(1);
+    width: 2rem;
+    height: 2rem;
+}
