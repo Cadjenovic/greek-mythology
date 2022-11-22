@@ -12,6 +12,7 @@ exports.getAll = async (req: Request, res: Response, next: NextFunction) => {
     const beings: IBeing[] = await Being.find(queryObj).limit(limit);
 
     if (!beings) {
+        res.json({ msg: "a" });
         new AppError("Could not find anything!", 404);
     }
 
@@ -34,6 +35,7 @@ exports.getByName = async (req: Request, res: Response, next: NextFunction) => {
     const beings: IBeing[] = await Being.find({ name: regexp }).limit(limit);
 
     if (!beings) {
+        res.json({ msg: "a" });
         new AppError("Could not find anything!", 404);
     }
 
