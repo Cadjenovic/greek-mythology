@@ -1,3 +1,5 @@
+DISCLAIMER: First load will take ~50 seconds due to backend hosting service going "cold" after a period of inactivity. Give it some time and it will be perfectly nice and fast after the first load! :)
+
 # greek-mythology
 A place to explore deities of the Ancient Greece
 
